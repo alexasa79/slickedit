@@ -17,6 +17,10 @@ fi
 echo "Creating project $proj"
 
 exe=$0
+if [ -L $exe ]; then
+	exe=$(readlink $exe)
+fi
+
 dir=$(dirname $exe)
 cp -f $dir/template.vpw ./$proj.1.vpw
 cp -f $dir/template.vpj ./$proj.1.vpj
