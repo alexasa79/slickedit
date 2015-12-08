@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<KeyBindings Version="1.0" Emulation="Visual C++ 6">
+	<Mode Name="default">
+		<Assign Key="Alt+2" Command="activate-references"/>
+		<Remove Key="Alt+F1"/>
+		<Remove Key="Command+F1"/>
+		<Assign Key="Ctrl+PgDn" Command="next-buff-tab"/>
+		<Assign Key="Ctrl+PgUp" Command="prev-buff-tab"/>
+		<Assign Key="Ctrl+Shift+'" Command="find-space-and-enter"/>
+		<Assign Key="Ctrl+Shift+," Command="comment-erase"/>
+		<Assign Key="Ctrl+Shift+." Command="comment"/>
+		<Assign Key="Ctrl+Shift+L" Command="activate-find-symbol"/>
+		<Assign Key="Ctrl+Shift+P" Command="ols"/>
+		<Assign Key="Ctrl+Shift+W" Command="workspace-organize"/>
+		<Assign Key="Ctrl+W" Command="close-window"/>
+	</Mode>
+</KeyBindings>
