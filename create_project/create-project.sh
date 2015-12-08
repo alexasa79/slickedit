@@ -25,6 +25,10 @@ fi
 echo "Creating workspace $proj_file.vpw"
 
 exe=$0
+if [ -L $exe ]; then
+	exe=$(readlink $exe)
+fi
+
 dir=$(dirname $exe)
 cp -f $dir/template.vpw $proj_file.1.vpw
 cp -f $dir/template.vpj $proj_file.1.vpj
