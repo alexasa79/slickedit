@@ -4,7 +4,8 @@
 	VendorName="SlickEdit"
 	TemplateName="GNU C/C++"
 	WorkingDir="."
-	BuildSystem="vsbuild">
+	BuildSystem="vsbuild"
+	VCSProject="Subversion:">
 	<Config
 		Name="Debug"
 		Type="gnuc"
