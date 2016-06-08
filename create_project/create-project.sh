@@ -36,7 +36,7 @@ sed "s/%PROJECTNAME/$proj_name/" $proj_file.1.vpw > $proj_file.vpw
 sed "s/%PROJECTNAME/$proj_name/" $proj_file.1.vpj > $proj_file.2.vpj
 
 find . -name "*.cpp" -o -name "*.c" -o -name "*.h" -o -name "*.cc" -o -name "*.hxx" -o -name "*.hpp" -o -name "*.sh" -o -name "*.py" -o -name "*.pl" \
--o -name "Makefile" -o -name "*.make" -o -name "*.mak" -o -name "*.def" -o -name "README.*" -o -name "README" | grep -v "\.svn" | sed 's/^\.\///' > $proj_file.files1
+-o -name "Makefile" -o -name "*.make" -o -name "*.mak" -o -name "*.def" -o -name "README.*" -o -name "README" -o -name "*.xml" | grep -v "\.svn" | sed 's/^\.\///' > $proj_file.files1
 
 for file in $(cat $proj_file.files1); do
 	if [ ! -h $file ]; then
