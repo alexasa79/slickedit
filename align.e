@@ -42,14 +42,21 @@ static _str align_eq_filter(s)
         return s;
     }
 
-    next_space += next_char - next_space - 1;
+    _str prefix;
+    _str postfix;
 
-    _str prefix = substr(s, 1, next_space - 1);
-    _str postfix = substr(s, next_space);
+    if (next_char > max_col) {
+        prefix = substr(s, 1, next_space - 1);
+        postfix = substr(s, next_space + (next_char - max_col) - 1);
+    } else {
+        next_space += next_char - next_space - 1;
 
-    while (next_space < max_col) {
-        prefix = prefix :+ ' ';
-        next_space++;
+        prefix = substr(s, 1, next_space - 1);
+
+        while (next_space < max_col) {
+            prefix = prefix :+ ' ';
+            next_space++;
+        }
     }
 
     return prefix :+ postfix;
