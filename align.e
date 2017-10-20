@@ -53,7 +53,6 @@ static _str align_eq_filter(s)
         prefix = substr(s, 1, next_space - 1);
         postfix = substr(s, next_space);
 
-        messageNwait(next_space :+ " " :+ max_col);
         while (next_space < max_col) {
             prefix = prefix :+ ' ';
             next_space++;
