@@ -4,7 +4,6 @@
 // https://community.slickedit.com/index.php/topic,15632.msg59735.html#msg59735
 
 static int max_col;
-static _str alignStr;
 
 static _str find_max_eq_filter(s)
 {
@@ -52,7 +51,9 @@ static _str align_eq_filter(s)
         next_space += next_char - next_space - 1;
 
         prefix = substr(s, 1, next_space - 1);
+        postfix = substr(s, next_space);
 
+        messageNwait(next_space :+ " " :+ max_col);
         while (next_space < max_col) {
             prefix = prefix :+ ' ';
             next_space++;
