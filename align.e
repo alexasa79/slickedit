@@ -33,6 +33,17 @@ static _str align_eq_filter(s)
     }
 
     next_space = pos("[[:blank:]]", s, first_char, "R")
+    if (next_space == 0) {
+        return s;
+    }
+
+    next_char = pos("[^[:blank:]]", s, next_space, "R");
+    if (next_char == 0 || next_char <= next_space) {
+        return s;
+    }
+
+    next_space += next_char - next_space - 1;
+
     _str prefix = substr(s, 1, next_space - 1);
     _str postfix = substr(s, next_space);
 
